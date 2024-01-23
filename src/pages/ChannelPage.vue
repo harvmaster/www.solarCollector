@@ -111,6 +111,10 @@ const connectSocket = (id: string, password: string) => {
   socket.on('update', (data) => {
     state.value = { ...state.value, ...data }
   });
+  
+  socket.on('joined', msg => {
+    state.value = { ...msg.state }
+  })
 }
 
 const getChannelInfo = () => {
