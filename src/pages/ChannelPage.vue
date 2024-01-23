@@ -131,35 +131,4 @@ const getChannelInfo = () => {
 onMounted(() => {
   getChannelInfo()
 })
-
-
-
-// import { ref, computed } from 'vue'
-
-// import IO from 'socket.io-client';
-
-// const socket = IO('https://api.solar.mc.hzuccon.com');
-
-// socket.on('connect', () => {
-//   console.log('connected to Solar API');
-// });
-
-// socket.emit('join', {
-//   clientType: 'consumer',
-//   data: {
-//     consumerId: Math.floor(Math.random()*1000000000)
-//   }
-// })
-
-// socket.on('update', (data) => {
-//   console.log(data);
-//   if (data.battery) battery.value = data.battery;
-//   if (data.solar) solar.value = data.solar;
-//   if (data.consumption) consumption.value = data.consumption;
-// });
-
-// const battery = ref(0)
-// const solar = ref(0);
-// const consumption = ref(0);
-
 </script>
