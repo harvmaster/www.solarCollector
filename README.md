@@ -1,41 +1,15 @@
-# Solar Api (solarapi)
+# www.solarCollector
+A Quasar/Vue frontend for my solarCollector project.<br />
+The project uses MQTT to transmit data from my Victron Energy CCGX to a Node.js server using websockets. This data is then sent again through websockets to the frontend.<br />
+A demo to the frontend for this project can be found [here](https://www.solar.mc.hzuccon.com/#/demo)<br />
+The demo channel and password are 'demo'.
+- [MQTT SolarCollector](https://github.com/harvmaster/SolarCollector)
+- [Backend SolarCollector](https://github.com/harvmaster/api.solarCollector)
 
-A Quasar Project
-
-## Install the dependencies
+## Installation
 ```bash
-yarn
-# or
+git clone git@github.com:harvmaster/www.solarCollector.git
+cd www.solarCollector
 npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
 quasar dev
 ```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
