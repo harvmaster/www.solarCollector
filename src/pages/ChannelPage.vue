@@ -6,8 +6,9 @@
         <div class="col-auto justify-center">
           <q-icon name="battery_charging_full" size="100px" color="white" />
         </div>
-        <div class="col-auto justify-center">
-          <div class="text-h2 text-white">{{ state.battery }}%</div>
+        <div class="col-auto column justify-center">
+          <div class="col-auto text-h2 text-white">{{ state.battery }}%</div>
+          <div class="col-auto text-h4 text-white">{{ state.batteryVoltage.toPrecision(4) }}v</div>
         </div>
       </div>
     </div>
@@ -78,7 +79,8 @@ const channelStore = useChannelStore()
 const state = ref({
   solar: 0,
   consumption: 0,
-  battery: 0
+  battery: 0,
+  batteryVoltage: 0
 })
 
 const connectSocket = (id: string, password: string) => {
@@ -119,8 +121,13 @@ const connectSocket = (id: string, password: string) => {
 
 const getChannelInfo = () => {
   const channelId = router.currentRoute.value.params.channel
+  console.log(channelId)
 
   const channel = channelStore.channels.find(channel => channel.id === channelId)
+  if (!channel && channelId == 'demo') {
+    return connectSocket('demo', 'demo')
+  }
+
   if (channel) {
     connectSocket(channel.id, channel.password)
   } else {
